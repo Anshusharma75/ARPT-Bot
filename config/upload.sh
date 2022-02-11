@@ -131,7 +131,7 @@ UPLOAD() {
 
 if [ -z $2 ]; then
     echo && echo -e "${ERROR} This script can only be used by passing parameters through Aria2."
-    echo && echo -e "${WARRING} 直接运行此脚本可能导致无法开机！"
+    echo && echo -e "${WARRING} Running this script directly may result in failure to boot!"
     exit 1
 elif [ $2 -eq 0 ]; then
     exit 0
