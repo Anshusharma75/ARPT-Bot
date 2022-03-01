@@ -17,7 +17,7 @@ RUN sudo apt install python3-pillow -y
 
 
 RUN apt install tzdata -y
-RUN apt-get install https://github.com/Anshusharma75/anshu2/archive/refs/heads/master.zip -y
+RUN apt-get install aria2 -y
 RUN apt-get install nginx -y
 
 COPY root /
@@ -28,8 +28,8 @@ RUN bash install.sh
 RUN mv /nginx.conf /etc/nginx/
 
 
-RUN mkdir /root/.anshu2
-COPY config /root/.anshu2/
+RUN mkdir /root/.aria2
+COPY config /root/.aria2/
 RUN pip3 install --upgrade pip
 
 RUN sudo apt-get install gcc libffi-dev libssl-dev  -y
@@ -37,10 +37,10 @@ RUN sudo apt-get install gcc libffi-dev libssl-dev  -y
 RUN pip3 install -U pyrogram tgcrypto
 #RUN pip3 install pillow
 RUN pip3 install telegraph
-RUN pip3 install https://github.com/Anshusharma75/jhamak/archive/refs/heads/master.zip
+RUN pip3 install aria2p
 RUN pip3 install mutagen
 RUN pip3 install requests
-RUN pip3 install -U https://github.com/Anshusharma75/prabhu/archive/refs/heads/master.zip
+RUN pip3 install -U yt-dlp
 RUN pip3 install apscheduler
 RUN pip3 install pyromod
 RUN pip3 install psutil
@@ -61,7 +61,7 @@ RUN mkdir /bot
 COPY bot /bot
 RUN chmod 0777 /bot/ -R
 
-RUN sudo chmod 777 /root/.anshu2/
+RUN sudo chmod 777 /root/.aria2/
 
 COPY /config/upload.sh /
 RUN chmod 0777 /upload.sh
